@@ -8,6 +8,7 @@ namespace NRulesImplementation.Layers.Domain
 {
     public class Invoice
     {
+        
         List<Item> _items = new List<Item>();
         private Invoice() { }
 
@@ -28,6 +29,9 @@ namespace NRulesImplementation.Layers.Domain
         {
             _items.Add(item);
         }
+
+        public void RemoveItem(Item item) { }
+
         #endregion
     }
 }

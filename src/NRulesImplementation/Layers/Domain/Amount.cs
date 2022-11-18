@@ -10,10 +10,12 @@ namespace NRulesImplementation.Layers.Domain
     {
         private Amount() { }
 
-        public Amount(AmountType amountType) {
+        public Amount(AmountType amountType, string description) {
             AmountType = amountType;
+            Description = description;
         }
         public AmountType AmountType { get; }
+        public string Description { get; }
         public decimal Value
         {
             get; set;
