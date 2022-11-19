@@ -22,17 +22,17 @@ namespace NRulesImplementation.Layers.Domain.ValueObjects
             $ asserts position at the end of the string, or before the line terminator right at the end of the string (if any)
        */
         /// <summary>
-        /// Minimum 10 Digits, Maximum 10 Digits. Padding will be applied
+        /// Minimum 1 Digits, Maximum 10 Digits. Padding will be applied
         /// </summary>
-        private static string _invoiceNumberExpression = "^\\+?\\d{1,10}$";
+        private static string expression = "^\\+?\\d{1,10}$";
 
         #region Public Static Methods
-            public static string InvoiceNumberExpression { get { return _invoiceNumberExpression; } }
+            public static string Expression { get { return expression; } }
         #endregion
 
         public InvoiceNumber(string value)
         {
-            var result = Regex.Match(value, InvoiceNumberExpression);
+            var result = Regex.Match(value, Expression);
             if (!result.Success)
             {
                 throw new Exception($"{value} is an invalid number. Only digits with a maximum of 10 are allowed.");
